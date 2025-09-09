@@ -5,20 +5,31 @@
         bool gameOn = true;
         bool correctUserInput = true;
         Console.Clear();
+        int playerRounds, computerRounds, computer;
+        playerRounds = computerRounds = 0;
         var rand = new Random();
-        int playerRounds, compouterRounds;
-        playerRounds = compouterRounds = 0;
+
         while (gameOn)
         {
-            int computerInput = rand.Next(0, 3); //Slumpa in 0 - 3.
-            Graphics.ShotgunLogo();
-            Console.WriteLine("\nVälj att (S)kjuta, (L)adda eller (B)lockera?");
+
+            Graphics.ShotgunLogo(); //Spelets logga
+            Console.WriteLine("\nVälj att (S)kjuta, (L)adda eller (B)lockera?"); //Gör om till metod och lägg till shotgun om skott >= 3
+
             char userInput = char.ToUpper(Console.ReadKey().KeyChar); //Spara valet av spelare i userInput
-            Console.Clear();
-            Console.WriteLine($"Spelarens val: {Logics.PlayerChoice(userInput)}");
-            Console.WriteLine($"Datorns val: {computerInput}");
-            playerRounds += Logics.Rounds(Logics.PlayerChoice(userInput));
-            Console.WriteLine(playerRounds);
+            Console.Clear(); //Rense konsolen
+
+            int player = Logics.PlayerChoice(userInput); // översätter S/L/B till 0,1,2. Kommer även 3 för shotgun senare
+
+            Console.WriteLine($"Spelarens val: {player}");
+            Console.WriteLine();
+
+            computer = rand.Next(0, 3); //Slumpa in 0 - 3.
+
+            Logics.Rounds(player, ref playerRounds); //Adderar/subtraherar till rounds(skott)
+            Logics.Rounds(computer, ref computerRounds); //Adderar/subtraherar till rounds(skott)
+
+            Console.WriteLine($"Spelarens har: {playerRounds} skott kvar");
+            Console.WriteLine($"Datorn har :{computerRounds} skott kvar");
         }
     }
 }

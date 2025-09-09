@@ -1,20 +1,44 @@
 class Logics
 {
-    public static int Rounds(int PlayerChoice)
+    
+    public static bool CheckRounds(ref int check)
     {
-        if (PlayerChoice == 0)
+        if (check > 0)
         {
-            return -1;
-        }
-        else if (PlayerChoice == 1)
-        {
-            return 1;
+            return true;
         }
         else
         {
-            return 0;
+            return false;
         }
     }
+
+    public static void ComputerChoice(ref int computer)
+    {
+        var rand = new Random();
+        computer = rand.Next(0, 3); //Slumpa in 0 - 3.
+    }
+
+    public static void Rounds(int Choice, ref int roundChange)
+    {
+        if (Choice == 0)
+        {
+            roundChange -= 1;
+        }
+        else if (Choice == 1)
+        {
+            roundChange += 1;
+        }
+        else
+        {
+            roundChange = 0;
+        }
+    }
+    static void RoundsLeft(int player, int computer)
+    {
+        
+    }
+
     public static int PlayerChoice(char input)
     {
         int returnValue;
