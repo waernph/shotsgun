@@ -34,10 +34,7 @@ class Logics
         }
     }
 
-    static void RoundsLeft(int player, int computer)
-    {
 
-    }
 
     public static int PlayerChoice(char input)
     {
@@ -61,7 +58,7 @@ class Logics
         }
         else
         {
-            returnValue = 9;
+            returnValue = 9; //Används som felvärde
         }
         return returnValue;
     }
@@ -145,4 +142,6 @@ class Logics
             return true;
         }
     }
+
+
 }

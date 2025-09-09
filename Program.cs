@@ -1,32 +1,27 @@
-﻿using System.Xml.Serialization;
-
-class Program
+﻿class Program
 {
     static void Main()
     {
         bool gameOn = true;
-        bool validUserInput = false;
+        bool correctUserInput = false;
         bool validRandom = false;
-        var rand = new Random();
-        int playerRounds,
-            computerRounds,
-            computer,
-            player;
-        char userInput = ' ';
-        playerRounds = computerRounds = computer = 0;
-
         Console.Clear();
+        int playerRounds, computerRounds, computer;
+        playerRounds = computerRounds = computer = 0;
+        var rand = new Random();
 
         while (gameOn)
         {
-            Console.Clear(); //Rense konsolen
+
             Graphics.ShotgunLogo(); //Spelets logga
             Console.WriteLine($"\nSpelarens har: {playerRounds} skott kvar");
             Console.WriteLine($"Datorn har :{computerRounds} skott kvar");
 
             Prompts.Choises(playerRounds);
-            userInput = char.ToUpper(Console.ReadKey().KeyChar); //Spara valet av spelare i userInput
-            player = Logics.PlayerChoice(userInput); // översätter S/L/B till 0,1,2. Kommer även 3 för shotgun senare
+            char userInput = char.ToUpper(Console.ReadKey().KeyChar); //Spara valet av spelare i userInput
+            Console.Clear(); //Rense konsolen
+
+            int player = Logics.PlayerChoice(userInput); // översätter S/L/B till 0,1,2. Kommer även 3 för shotgun senare
 
             while (!validRandom)
             {
@@ -49,21 +44,7 @@ class Program
             Logics.Rounds(player, ref playerRounds); //Adderar/subtraherar till rounds(skott)
             Logics.Rounds(computer, ref computerRounds); //Adderar/subtraherar till rounds(skott)
 
-            if (!Logics.ScoreBoard(player, computer))
-            {
-                Console.WriteLine("Vill du spela igen? J/N");
-                char playAgain = char.ToUpper(Console.ReadKey().KeyChar);
-                if (playAgain == 'N')
-                {
-                    gameOn = false;
-                }
-                else if (playAgain == 'J')
-                {
-                    playerRounds = 0;
-                    computerRounds = 0;
-                    gameOn = true;
-                }
-            }
+            gameOn = Logics.ScoreBoard(player, computer);
         }
     }
 }
