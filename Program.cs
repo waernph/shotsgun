@@ -13,8 +13,8 @@
         {
 
             Graphics.ShotgunLogo(); //Spelets logga
-            Console.WriteLine("\nVälj att (S)kjuta, (L)adda eller (B)lockera?"); //Gör om till metod och lägg till shotgun om skott >= 3
 
+            Prompts.Choises(playerRounds);
             char userInput = char.ToUpper(Console.ReadKey().KeyChar); //Spara valet av spelare i userInput
             Console.Clear(); //Rense konsolen
 
@@ -24,12 +24,15 @@
             Console.WriteLine();
 
             computer = rand.Next(0, 3); //Slumpa in 0 - 3.
+            gameOn = Logics.ScoreBoard(player, computer);
 
             Logics.Rounds(player, ref playerRounds); //Adderar/subtraherar till rounds(skott)
             Logics.Rounds(computer, ref computerRounds); //Adderar/subtraherar till rounds(skott)
 
             Console.WriteLine($"Spelarens har: {playerRounds} skott kvar");
             Console.WriteLine($"Datorn har :{computerRounds} skott kvar");
+
+            
         }
     }
 }
