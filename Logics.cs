@@ -12,12 +12,6 @@ class Logics
         }
     }
 
-    public static void ComputerChoice(int computer)
-    {
-        var rand = new Random();
-        computer = rand.Next(0, 3); //Slumpa in 0 - 3.
-    }
-
     public static void Rounds(int Choice, ref int roundChange)
     {
         if (Choice == 0)
@@ -33,8 +27,6 @@ class Logics
             roundChange = 0;
         }
     }
-
-
 
     public static int PlayerChoice(char input)
     {
@@ -142,6 +134,4 @@ class Logics
             return true;
         }
     }
-
-
 }

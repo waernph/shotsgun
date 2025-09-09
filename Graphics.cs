@@ -13,7 +13,7 @@ class Graphics
     }
     public static void YouWin()
     {
-        Console.Clear();
+        //Console.Clear();
         Console.WriteLine(@"
     __   _____  _   _  __        _____ _   _ _ 
     \ \ / / _ \| | | | \ \      / /_ _| \ | | |
@@ -23,7 +23,7 @@ class Graphics
     }
     public static void YouLost()
     {
-        Console.Clear();
+        //Console.Clear();
         Console.WriteLine(@"
     __   _____  _   _   _     ___  ____ _____ _ 
     \ \ / / _ \| | | | | |   / _ \/ ___|_   _| |

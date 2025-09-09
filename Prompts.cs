@@ -8,7 +8,6 @@ class Prompts
         {
             Console.WriteLine("\nVälj (S)kjuta, (L)adda eller (B)lockera?"); //Om det finns 1-2 rounds
         }
-
         else if (roundsLeft >= 3)
         {
             Console.WriteLine("\nVälj (H)agelgevär, (S)kjuta, (L)adda eller (B)lockera?"); //Om det finns 3 eller fler rounds
@@ -17,6 +16,11 @@ class Prompts
         {
             Console.WriteLine("\nDu har inga skott kvar! Välj (L)adda eller (B)lockera?"); //Om det finns 0 rounds kvar.
         }
-
     }
+
+    /* public static void ShotsLeft()
+    {
+        Console.WriteLine($"\nSpelarens har: {playerRounds} skott kvar");
+        Console.WriteLine($"Datorn har: {computerRounds} skott kvar");
+    } */
 }

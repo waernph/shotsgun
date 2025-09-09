@@ -3,16 +3,17 @@
     static void Main()
     {
         bool gameOn = true;
-        bool correctUserInput = false;
+        //bool correctUserInput = false;
         bool validRandom = false;
         Console.Clear();
-        int playerRounds, computerRounds, computer;
+        int playerRounds,
+            computerRounds,
+            computer;
         playerRounds = computerRounds = computer = 0;
         var rand = new Random();
 
         while (gameOn)
         {
-
             Graphics.ShotgunLogo(); //Spelets logga
             Console.WriteLine($"\nSpelarens har: {playerRounds} skott kvar");
             Console.WriteLine($"Datorn har :{computerRounds} skott kvar");
@@ -27,12 +28,13 @@
             {
                 if (computerRounds == 0 && computer == 0)
                 {
-                    computer = rand.Next(1, 2); //Slumpa in 0 - 3.
+                    computer = rand.Next(11, 29) / 10; //Slumpa in 1 - 2.
+
                     break;
                 }
                 else if (computerRounds < 3)
                 {
-                    computer = rand.Next(0, 2); //Slumpa in 0 - 3.
+                    computer = rand.Next(0, 29) / 10; //Slumpa in 0 - 2.
                     break;
                 }
                 else if (computerRounds == 3)
@@ -41,6 +43,7 @@
                     break;
                 }
             }
+
             Logics.Rounds(player, ref playerRounds); //Adderar/subtraherar till rounds(skott)
             Logics.Rounds(computer, ref computerRounds); //Adderar/subtraherar till rounds(skott)
 
