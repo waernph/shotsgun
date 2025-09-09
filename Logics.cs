@@ -68,37 +68,76 @@ class Logics
 
     public static bool ScoreBoard(int input, int ComputerChoice)
     {
-        if (input == 0 || ComputerChoice == 1) //Göra om till switch?
+        string[] alternativ = ["skjut", "ladda", "blocka", "hagelgevär"];
+
+        if (input == 0 && ComputerChoice == 0) //Göra om till switch?
+        {
+            Console.WriteLine($"\nDu valde {alternativ[input]}");
+            Console.WriteLine($"Datorn valde {alternativ[ComputerChoice]}");
+            return true;
+        }
+        else if (input == 0 && ComputerChoice == 1) // Fixa grafik It's a Draw
         {
             Graphics.YouWin();
-            return false;
-        }
-        else if (input == 0 || ComputerChoice == 0) // Fixa grafik It's a Draw
-        {
+            Console.WriteLine($"\nDu valde {alternativ[input]}");
+            Console.WriteLine($"Datorn valde {alternativ[ComputerChoice]}");
             return true;
         }
-        else if (input == 1 || ComputerChoice == 1)
+        else if (input == 0 && ComputerChoice == 2)
         {
+            Console.WriteLine($"\nDu valde {alternativ[input]}");
+            Console.WriteLine($"Datorn valde {alternativ[ComputerChoice]}");
             return true;
         }
-        else if (input == 1 || ComputerChoice == 0)
+        else if (input == 1 && ComputerChoice == 0)
         {
             Graphics.YouLost();
-            return false;
-        }
-        else if (input == 0 || ComputerChoice == 2) // Fixa grafik Block
-        {
-            Console.WriteLine("Datorn blockade!");
+            Console.WriteLine($"\nDu valde {alternativ[input]}");
+            Console.WriteLine($"Datorn valde {alternativ[ComputerChoice]}");
             return true;
         }
-        else if (input == 2 || ComputerChoice == 0) // Fixa grafik Block
+        else if (input == 1 && ComputerChoice == 1) // Fixa grafik Block
         {
-            Console.WriteLine("Du blockade!");
+            Console.WriteLine($"\nDu valde {alternativ[input]}");
+            Console.WriteLine($"Datorn valde {alternativ[ComputerChoice]}");
             return true;
         }
-        else if (input == 2 || ComputerChoice == 2) // Fixa grafik Block
+        else if (input == 1 && ComputerChoice == 2) // Fixa grafik Block
+        {
+            Console.WriteLine($"\nDu valde {alternativ[input]}");
+            Console.WriteLine($"Datorn valde {alternativ[ComputerChoice]}");
+            return true;
+        }
+        else if (input == 2 && ComputerChoice == 0) // Fixa grafik Block
+        {
+            Console.WriteLine($"\nDu valde {alternativ[input]}");
+            Console.WriteLine($"Datorn valde {alternativ[ComputerChoice]}");
+            return true;
+        }
+        else if (input == 2 && ComputerChoice == 1) // Fixa grafik Block
+        {
+            Console.WriteLine($"\nDu valde {alternativ[input]}");
+            Console.WriteLine($"Datorn valde {alternativ[ComputerChoice]}");
+            return true;
+        }
+        else if (input == 2 && ComputerChoice == 2) // Fixa grafik Block
+        {
+            Console.WriteLine($"\nDu valde {alternativ[input]}");
+            Console.WriteLine($"Datorn valde {alternativ[ComputerChoice]}");
+            return true;
+        }
+        else if (input == 3) // Fixa grafik Block
+        {
+            Graphics.YouWin();
+            Console.WriteLine($"\nDu valde {alternativ[input]}");
+            Console.WriteLine($"Datorn valde {alternativ[ComputerChoice]}");
+            return true;
+        }
+        else if (ComputerChoice == 3) // Fixa grafik Block
         {
             Graphics.YouLost();
+            Console.WriteLine($"\nDu valde {alternativ[input]}");
+            Console.WriteLine($"Datorn valde {alternativ[ComputerChoice]}");
             return true;
         }
         else

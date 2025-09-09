@@ -15,7 +15,7 @@ class Prompts
         }
         else if (roundsLeft == 0)
         {
-            Console.WriteLine("Du har inga skott kvar! Välj (L)adda eller (B)lockera?"); //Om det finns 0 rounds kvar.
+            Console.WriteLine("\nDu har inga skott kvar! Välj (L)adda eller (B)lockera?"); //Om det finns 0 rounds kvar.
         }
 
     }
