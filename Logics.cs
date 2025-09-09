@@ -81,7 +81,7 @@ class Logics
             Graphics.YouWin();
             Console.WriteLine($"\nDu valde {alternativ[input]}");
             Console.WriteLine($"Datorn valde {alternativ[ComputerChoice]}");
-            return true;
+            return false;
         }
         else if (input == 0 && ComputerChoice == 2)
         {
@@ -94,7 +94,7 @@ class Logics
             Graphics.YouLost();
             Console.WriteLine($"\nDu valde {alternativ[input]}");
             Console.WriteLine($"Datorn valde {alternativ[ComputerChoice]}");
-            return true;
+            return false;
         }
         else if (input == 1 && ComputerChoice == 1) // Fixa grafik Block
         {
@@ -131,23 +131,18 @@ class Logics
             Graphics.YouWin();
             Console.WriteLine($"\nDu valde {alternativ[input]}");
             Console.WriteLine($"Datorn valde {alternativ[ComputerChoice]}");
-            return true;
+            return false;
         }
         else if (ComputerChoice == 3) // Fixa grafik Block
         {
             Graphics.YouLost();
             Console.WriteLine($"\nDu valde {alternativ[input]}");
             Console.WriteLine($"Datorn valde {alternativ[ComputerChoice]}");
-            return true;
+            return false;
         }
         else
         {
             return true;
         }
-
-
-        
     }
 }
-
-
